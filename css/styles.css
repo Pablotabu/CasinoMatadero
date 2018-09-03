@@ -1,0 +1,52 @@
+#ruleta-table{
+    
+    display: flex;
+    flex-direction: row;
+}
+
+#first-row {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#second-row {
+	display: flex;
+	justify-content: center;
+    width: 100%;
+    padding-right: 30px;
+}
+
+#third-row {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#zero {
+    display: inline-block;
+	background: green;
+	width: 80px;
+	height: 240px;
+	text-align: center;
+	border: 2px solid grey;
+	color: white;
+}
+
+.even {
+	background: red;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	border: 2px solid green;
+	color: white;
+}
+
+.odd {
+	background: black;
+	width: 80px;
+    height: 80px;
+	text-align: center;
+	border: 2px solid green;
+	color: white;
+}
