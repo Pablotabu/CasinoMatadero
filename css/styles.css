@@ -23,7 +23,7 @@
 	width: 100%;
 }
 
-#zero {
+.zero {
     display: inline-block;
 	background: green;
 	width: 80px;
