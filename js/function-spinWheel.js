@@ -82,7 +82,7 @@ var ctx = canvas.getContext("2d");
   ];
 
   var startAngle = 0;
-  var arc = (Math.PI / 32) * 2;
+  var arc = (Math.PI / 37) * 2;
   var spinTimeout = null;
 
   var spinArcStart = 10;
@@ -110,7 +110,7 @@ var ctx = canvas.getContext("2d");
 
       ctx.font = "bold 12px sans-serif";
 
-      for (var i = 0; i < 32; i++) {
+      for (var i = 0; i < 37; i++) {
         var angle = startAngle + i * arc;
         ctx.fillStyle = colors[i];
 
@@ -187,7 +187,8 @@ var ctx = canvas.getContext("2d");
     var ts = (t /= d) * t;
     var tc = ts * t;
     return b + c * (tc + -3 * ts + 3 * t);
-  }
-
+  }//preguntar si lo puedo quitar,no se para que sirve??
+ 
+ 
   draw();
 

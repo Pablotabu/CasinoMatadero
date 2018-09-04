@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type = "text/javascript" src="js/spinwheel.js"></script> 
+  <script type = "text/javascript" src="js/game.js"></script> 
+  <script type = "text/javascript" src="js/index.js"></script> 
+  
   
   
   <link rel="stylesheet" href="css/styles.css">
@@ -16,66 +24,89 @@
           
           
           <div id="ruleta-table">
-              <div id = "zero"> <h1>0</h1> </div>
+              <div id = "zero" class = "number" value = "0"><h3>0</h3> </div>
               
               <div>
                   <div id="first-row">
-                      <div class = "number odd black"><h2> 3 </h2></div>
-                      <div class = "number even red"><h2> 6 </h2></div>
-                      <div class = "number odd black"> <h2> 9 </h2></div>
-                      <div class = "number even red"> <h2> 12 </h2></div>
-                      <div class = "number odd black"> <h2> 15 </h2> </div>
-                      <div class = "number even red"> <h2> 18 </h2> </div>
-                      <div class = "number odd black"> <h2> 21 </h2> </div>
-                      <div class = "number even red"> <h2> 24 </h2> </div>
-                      <div class = "number odd black"> <h2> 27 </h2> </div>
-                      <div class = "number even red"> <h2> 30 </h2> </div>
-                      <div class = "number odd black"> <h2> 33 </h2> </div>
-                      <div class = "number even red"> <h2> 36 </h2> </div>
-                      </div>
-                      <div id= "second-row">
-                          
-                          <div class= "number even red"> <h2>2</h2> </div>
-                          <div class= "number odd black"> <h2>5</h2> </div>
-                          <div class= "number even red"> <h2>8</h2> </div>
-                          <div class= "number odd black"> <h2>11</h2> </div>
-                          <div class= "number even red"> <h2>4</h2> </div>
-                          <div class= "number odd black"> <h2>17</h2> </div>
-                          <div class= "number even red"> <h2>20</h2> </div>
-                          <div class= "number odd black"> <h2>23</h2> </div>
-                          <div class= "number even red"> <h2>26</h2> </div>
-                          <div class= "number odd black"> <h2>29</h2> </div>
-                          <div class= "number even red"> <h2>32</h2> </div>
-                          <div class= "number odd black"> <h2>35</h2></div>
-                          </div>
+                <input type="button"   value = "3" class = "number odd black">
+                <input type = "button" value = "6"  class = "number even red">
+                <input type = "button" value = "9"  class = "number odd black"> 
+                <input type = "button" value = "12" class = "number even red"> 
+                <input type = "button" value = "15" class = "number odd black"> 
+                <input type = "button" value = "18" class = "number even red"> 
+                <input type = "button" value = "21" class = "number odd black"> 
+                <input type = "button" value = "24" class = "number even red"> 
+                <input type = "button" value = "27" class = "number odd black"> 
+                <input type = "button" value = "30" class = "number even red"> 
+                <input type = "button" value = "33" class = "number odd black"> 
+                <input type = "button" value = "36" class = "number even red">
+                      
+            </div>
+
+
+                <div id= "second-row">
+                    <input type = "button" value = "2 " class = "number even red">
+                    <input type = "button" value = "5 " class = "number odd black">
+                    <input type = "button" value = "8 " class = "number even red">
+                    <input type = "button" value = "11" class = "number odd black">
+                    <input type = "button" value = "14" class = "number even red">
+                    <input type = "button" value = "17" class = "number odd black">
+                    <input type = "button" value = "20" class = "number even red">
+                    <input type = "button" value = "23" class = "number odd black">
+                    <input type = "button" value = "26" class = "n mber even red">
+                    <input type = "button" value = "29" class = "number odd black">
+                    <input type = "button" value = "32" class = "number even red">
+                    <input type = "button" value = "35" class = "number odd black">
+
+                </div>
+
+
                           <div id = "third-row">
-                              <div  class= "number odd"> <h2>1</h2> </div>
-                              <div class= "number even black"><h2>4</h2> </div>
-                              <div class= "number odd red"> <h2>7</h2> </div>
-                              <div class= "number even black"> <h2>10</h2> </div>
-                              <div class= "number odd red"> <h2>13</h2> </div>
-                              <div class= "number even black"> <h2>16</h2> </div>
-                              <div class= "number odd red"> <h2>19</h2> </div>
-                              <div class= "number even black"> <h2>22</h2> </div>
-                              <div class= "number odd red"><h2>25</h2></div>
-                              <div class= "number even black"> <h2>28</h2> </div>
-                              <div class= "number odd red"> <h2>31</h2> </div>
-                              <div class= "number even black"> <h2>34</h2> </div>
-                              </div>
-                              </div>
-                              </div>			
-                              </div>	
+                              <input type = "button" value = "1" class =  "number odd red">
+                              <input type = "button" value = "4" class =  "number even black">
+                              <input type = "button" value = "7" class =  "number odd red">
+                              <input type = "button" value = "10" class =  "number even black">
+                              <input type = "button" value = "13" class =  "number odd red">
+                              <input type = "button" value = "16" class =  "number even black">
+                              <input type = "button" value = "19" class =  "number odd red"> 
+                              <input type = "button" value = "22" class =  "number even black"> 
+                              <input type = "button" value = "25" class =  "number odd red">
+                              <input type = "button" value = "28" class =  "number even black"> 
+                              <input type = "button" value = "31" class =  "number odd red">
+                              <input type = "button" value = "34" class= "number even black"> 
                               
-                              <div>
-                                  <input type="button" value="spin" onclick="spin();" style="float: left;" />
-                                  <canvas id="wheelcanvas" width="500" height="500"></canvas>
+                             </div>
+                            </div>
+                            <div>
+                         <aside>
+                         <input type="button" value="1"  class = "chips"/>
+                         <input type="button" value="5"  class = "chips"/>
+                         <input type="button" value="10" class = "chips"/>
+                                    </aside>
+                        <aside id="balance">
+                                <h1>BALANCE YO</h1>
+                                <h2>$0</h2>
+                         </aside>		
+                        <aside id ="panel price">
+                                    <h1>YOUR PRIZE</h1>
+                                    <h2>$0</h2>
+                          </aside>
+                          <aside class = "mybet">
+                              <h1>MY BET</h1>
+                              <h2 class ="bet">0</h2>
+                          </aside>
+                        </div>	
+                        
+                    </div>	
+                    
+                </div>               
+                        <div>
+                            <input type="button" value="spin" id = "spin" style="float: left;" />
+                            <canvas id="wheelcanvas" width="500" height="500"></canvas>
+                            
+                            </div>
                                   
-                                  </div>
-                                  
-                                  
-                                  
-                                  
-                                  <script type="text/javascript" src="js/function-spinWheel.js"></script>
-                                  
+                            <script type = "text/javascript" src="js/function-checkNumber.js"></script>  
+
 </body>
 </html>
