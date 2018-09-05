@@ -21,6 +21,12 @@ Game.prototype.draw = function() {
 };
 
 
+Game.prototype.myBalance = function(){
+    $(".mybalance").text(this.money + "$")
+   }
+
+
+
 
 
 Game.prototype.reset = function() {
@@ -31,7 +37,9 @@ Game.prototype.reset = function() {
       this.spinwheel.stopRotateWheel();
       for (i = 0 ; i < this.myNumbers.length; i++){
           if(this.luckynumber == this.myNumbers[i][0]){
-              cosnole.log("Has ganado " + this.myNumbers[i][1] * 36 + "$");
+              console.log("Has ganado " + this.myNumbers[i][1] * 36 + "$");
+              this.money += this.myNumbers[i][1] * 36;
+              this.myBalance()
               break;
           }
 
@@ -43,17 +51,13 @@ Game.prototype.reset = function() {
    $(".chips").on("click", function(e) {
     this.bet = e.currentTarget.value;
     console.log(this)
-    this.setBet(this.bet);
+    this.setBet(this.bet);//preguntar!!
     
   }.bind(this));
 };
 
 
-Game.prototype.calculateBalance = function(){
-    this.money - this.bet;
-    $(".mymoney").text(this.money)
-    console.log(mymoney)
-}
+
 
 
 
