@@ -12,7 +12,7 @@ function Game(canvasId) {
      $(".bet").text(this.bet);
  }
 
-Game.prototype.start = function() {//preguntar
+Game.prototype.start = function() {
   this.draw();
 };
 
@@ -26,9 +26,6 @@ Game.prototype.myBalance = function(){
    }
 
 
-
-
-
 Game.prototype.reset = function() {
   this.bet = 1;
   this.spinwheel = new SpinWheel(this);
@@ -39,25 +36,26 @@ Game.prototype.reset = function() {
           if(this.luckynumber == this.myNumbers[i][0]){
               console.log("Has ganado " + this.myNumbers[i][1] * 36 + "$");
               this.money += this.myNumbers[i][1] * 36;
-              this.myBalance()
+              this.myBalance();
+        this.clearBeat();
               break;
           }
-
-      }
+         }
       console.log(this.luckynumber)
     }.bind(this)
-  ); // "bind" hace que coja las propiedades anteriores al ultimo scope;
+  ) // "bind" hace que coja las propiedades anteriores al ultimo scope;
 
    $(".chips").on("click", function(e) {
     this.bet = e.currentTarget.value;
     console.log(this)
-    this.setBet(this.bet);//preguntar!!
+    this.setBet(this.bet);
     
   }.bind(this));
 };
 
-
-
+Game.prototype.clearBeat = function(){
+   this.myNumbers = [];
+}
 
 
 
@@ -66,22 +64,22 @@ Game.prototype.addNumber = function(number){
   var findNumber = false;
    for(i = 0 ; i < this.myNumbers.length; i++){
      if(this.myNumbers[i][0] == number){
+         this.money -= this.bet;
+         this.myBalance();
+         console.log(this.money)
          findNumber = true;
          this.myNumbers[i][1] += parseInt(this.bet);
          break;
-     }
-   }
-   if(findNumber == false){
-       this.myNumbers.push([parseInt(number),parseInt(this.bet)])
+        }
+    }
+    if(findNumber == false){
+        this.money -= this.bet
+        this.myBalance()
+        this.myNumbers.push([parseInt(number),parseInt(this.bet)])
    }
      console.log(this.myNumbers)
 }
 
 
 
-// $(".number").on("click", function(e){
-//     console.log(e.currentTarget.value)
-//     })
-//  $(".number").on("click", function(e){
-//     console.log(e.currentTarget.value)
-// })
+

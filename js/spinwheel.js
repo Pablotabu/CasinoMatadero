@@ -152,7 +152,7 @@ SpinWheel.prototype.draw = function() {
   SpinWheel.prototype.spin = function() {
     spinAngleStart = Math.random() * 10 + 10;
     spinTime = 0;
-    spinTimeTotal = Math.random() * 3 + 4 * 1000;
+    spinTimeTotal = Math.random() * 3 + 4 * 1000;//tiempo random animacion
     this.rotateWheel();
   }
 
@@ -171,9 +171,9 @@ SpinWheel.prototype.draw = function() {
 
   SpinWheel.prototype.stopRotateWheel = function () {
     clearTimeout(spinTimeout);
-    var degrees = (startAngle * 180) / Math.PI + 90;
-    var arcd = (arc * 180) / Math.PI;
-    var index = Math.floor((360 - (degrees % 360)) / arcd);
+    var degrees = (startAngle * 180) / Math.PI + 90;//lo paso de radianes a grados//StartAngle es donde empieza y es random
+    var arcd = (arc * 180) / Math.PI;//paso radianes del numero a grados
+    var index = Math.floor((360 - (degrees % 360)) / arcd);// me da el trozo de la ruleta q tiene el numero(el orden del elemento)
     this.game.ctx.save();
     this.game.ctx.font = "bold 30px sans-serif";
     var text = this.numbers[index];
