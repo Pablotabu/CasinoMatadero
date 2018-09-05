@@ -6,6 +6,8 @@ function Game(canvasId) {
   this.luckynumber = -1;
   this.money = 1000;
   this.oldNumbers = [];
+  this.colorBet = [];
+  this.oddEven = []
 }
 Game.prototype.repeatBet = function() {
   this.myNumbers = this.oldNumbers.splice(0);
@@ -16,6 +18,18 @@ Game.prototype.repeatBet = function() {
     console.log(this.money);
   }
 };
+
+Game.prototype.colorBet = function(){
+  $(".color").on("click", function(e){
+   var colorRedBlack = (e.currentTarget.value);
+   this.colorBet.push(colorRedBlack)
+   console.log(this.colorBet)
+
+  })}
+
+  Game.prototype.oddEvenBet = function(){
+
+  }
 
 Game.prototype.setBet = function() {
   $(".bet").text(this.bet);
@@ -54,17 +68,13 @@ Game.prototype.reset = function() {
     }.bind(this)
   ); // "bind" hace que coja las propiedades anteriores al ultimo scope;
 
-  $(".chips").on(
-    "click",
-    function(e) {
+  $(".chips").on( "click", function(e) {
       this.bet = e.currentTarget.value;
       console.log(this);
       this.setBet(this.bet);
     }.bind(this)
   );
-  $(".repeatbet").on(
-    "click",
-    function() {
+  $(".repeatbet").on("click",function() {
       console.log(this.oldNumbers);
       this.repeatBet();
     }.bind(this)

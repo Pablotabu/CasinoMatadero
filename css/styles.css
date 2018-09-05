@@ -64,3 +64,35 @@ input{
 	height: 40px;
 	background-image: url("../images/sistema-de-color-de-las-fichas-de-póker-del-casino-de-juego-58910030.jpg");
 }
+
+#colors {
+	justify-content: center;
+	display : flex;
+	flex-direction:row;
+}
+#colors .red{
+	background: red;
+	width: 320px;
+    height: 80px;
+	text-align: center;
+	border: 2px solid green;
+	color: white;
+}
+#colors .black{
+	background: black;
+	width: 320px;
+    height: 80px;
+	text-align: center;
+	border: 2px solid green;
+	color: white;
+}
+#colors .valor{
+	background: green;
+	width: 160px;
+    height: 80px;
+	text-align: center;
+	border: 2px solid black;
+	color: white;
+
+}
+
