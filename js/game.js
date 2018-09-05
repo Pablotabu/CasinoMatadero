@@ -5,6 +5,7 @@ function Game(canvasId) {
     this.reset();
     this.luckynumber = -1;
     this.money = 1000;
+    this.colorBet = []
   }
 
 
@@ -39,6 +40,8 @@ Game.prototype.reset = function() {
               this.myBalance();
         this.clearBeat();
               break;
+          }else
+          { this.clearBeat()
           }
          }
       console.log(this.luckynumber)
