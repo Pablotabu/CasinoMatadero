@@ -178,7 +178,7 @@ var ctx = canvas.getContext("2d");
     var index = Math.floor((360 - (degrees % 360)) / arcd);
     ctx.save();
     ctx.font = "bold 30px sans-serif";
-    var text = numbers[index];
+    var text = numbers[0];
     ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
     ctx.restore();
   }
