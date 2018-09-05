@@ -50,3 +50,17 @@
 	border: 2px solid green;
 	color: white;
 }
+
+img {
+	width: 3%;
+	height: 3%;
+}
+input{
+	background-color: brown;
+	
+}
+
+.chips {
+	height: 40px;
+	background-image: url("../images/sistema-de-color-de-las-fichas-de-póker-del-casino-de-juego-58910030.jpg");
+}

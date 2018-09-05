@@ -97,7 +97,7 @@ SpinWheel.prototype.draw = function() {
       
     if (this.game.canvas.getContext) {
       var outsideRadius = 200;
-      var textRadius = 160;
+      var textRadius = 180;
       var insideRadius = 125;
 
       
@@ -178,7 +178,7 @@ SpinWheel.prototype.draw = function() {
     this.game.ctx.font = "bold 30px sans-serif";
     var text = this.numbers[index];
     this.game.luckynumber = text;
-    console.log(this.game.luckynumber);
+    //console.log(this.game.luckynumber);
     this.game.ctx.fillText(text, 250 - this.game.ctx.measureText(text).width / 2, 250 + 10);
     this.game.ctx.restore();
   }
@@ -187,8 +187,8 @@ SpinWheel.prototype.draw = function() {
     var ts = (t /= d) * t;
     var tc = ts * t;
     return b + c * (tc + -3 * ts + 3 * t);
-  }//preguntar si lo puedo quitar,no se para que sirve??
+  }//
  
- console.log(this.game.luckynumber)
+ //console.log(this.game.luckynumber)
   
 }
