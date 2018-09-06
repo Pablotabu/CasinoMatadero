@@ -7,7 +7,9 @@ function Game(canvasId) {
   this.money = 1000;
   this.oldNumbers = [];
   this.colorBet = [];
+  this.colorRedBlack = []
   this.oddEven = []
+  this.oddEvenTable = []
 }
 Game.prototype.repeatBet = function() {
   this.myNumbers = this.oldNumbers.splice(0);
@@ -19,17 +21,28 @@ Game.prototype.repeatBet = function() {
   }
 };
 
-Game.prototype.colorBet = function(){
+ Game.prototype.colorBetRedBlack = function(){
   $(".color").on("click", function(e){
-   var colorRedBlack = (e.currentTarget.value);
-   this.colorBet.push(colorRedBlack)
+    this.colorRedBlack = (e.currentTarget.value);
+    console.log(this.colorRedBlack)
+    this.colorBet.push([this.colorRedBlack, this.bet])
    console.log(this.colorBet)
+}.bind(this))}
 
-  })}
+  Game.prototype.stopBet = function(){
+    console.log($(".mybalance").innerHTML)
+  }
 
   Game.prototype.oddEvenBet = function(){
+     $(".valor").on("click", function(e){
+       this.oddEvenTable = (e.currentTarget.value);
+       //console.log(this.oddEvenTable)
+       this.oddEven.push([this.oddEvenTable, this.bet])
+       console.log(this.oddEven)
+     }.bind(this))}
 
-  }
+  
+ //console.log(oddEvenBet())
 
 Game.prototype.setBet = function() {
   $(".bet").text(this.bet);
@@ -45,20 +58,22 @@ Game.prototype.draw = function() {
 
 Game.prototype.myBalance = function() {
   $(".mybalance").text(this.money + "$");
+  
 };
+
+
 
 Game.prototype.reset = function() {
   this.bet = 1;
   this.spinwheel = new SpinWheel(this);
-  $("#spin").on(
-    "click",
-    function() {
+  $("#spin").on("click",function() {
       this.spinwheel.spin();
       this.spinwheel.stopRotateWheel();
       for (i = 0; i < this.myNumbers.length; i++) {
         if (this.luckynumber == this.myNumbers[i][0]) {
           console.log("Has ganado " + this.myNumbers[i][1] * 36 + "$");
           this.money += this.myNumbers[i][1] * 36;
+          
           this.myBalance();
           break;
         }

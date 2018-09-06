@@ -3,12 +3,12 @@
 
 
 
-  $(".color").on("click", function(e){
-   var colorRedBlack = (e.currentTarget.value);
-   this.colorBet.push(colorRedBlack)
-   console.log(this.colorBet)
-
-  })
+//  Game.prototype.oddEvenBet = function(){
+//     $(".valor").on("click", function(e){
+//       return e.currentTarget.value
+//     })
+// }
+// console.log(oddEvenBet())
 // //$(".color").on("click",function(e){
 //  console.log(e.currentTarget.value)
 // })

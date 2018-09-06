@@ -4,6 +4,12 @@ window.onload = function(){
         var number = (e.currentTarget.value);
         game.addNumber(number)
          });
+
+//   //$(".color").on("click", function(e){
+//             var redBlack = (e.currentTarget.value);
+            game.colorBetRedBlack() ;
+            game.oddEvenBet();
+         //});     
     function spin(){
         game.spinwheel.spin()
     }
