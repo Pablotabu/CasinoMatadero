@@ -130,6 +130,7 @@ SpinWheel.prototype.draw = function() {
         );
         this.game.ctx.rotate(angle + arc / 2 + Math.PI / 2);
         var text = this.numbers[i];
+        
         this.game.ctx.fillText(text, -this.game.ctx.measureText(text).width / 2, 0);
         this.game.ctx.restore();
       }
@@ -178,6 +179,7 @@ SpinWheel.prototype.draw = function() {
     this.game.ctx.font = "bold 30px sans-serif";
     var text = this.numbers[index];
     this.game.luckynumber = text;
+    var color = this.colors[this.numbers.indexOf(text)]
     //console.log(this.game.luckynumber);
     this.game.ctx.fillText(text, 250 - this.game.ctx.measureText(text).width / 2, 250 + 10);
     this.game.ctx.restore();

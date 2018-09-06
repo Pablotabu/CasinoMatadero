@@ -10,6 +10,7 @@ function Game(canvasId) {
   this.colorRedBlack = []
   this.oddEven = []
   this.oddEvenTable = []
+  this.luckycolor;
 }
 Game.prototype.repeatBet = function() {
   this.myNumbers = this.oldNumbers.splice(0);
@@ -41,6 +42,17 @@ Game.prototype.repeatBet = function() {
        console.log(this.oddEven)
      }.bind(this))}
 
+   Game.prototype.checkOddEven = function(number){
+    if (number % 2 == 0){
+      return "even"
+    }else{
+      return "odd"
+    }
+       };
+
+   Game.prototype.checkColorBet = function(){}   
+    
+
   
  //console.log(oddEvenBet())
 
@@ -69,8 +81,16 @@ Game.prototype.reset = function() {
   $("#spin").on("click",function() {
       this.spinwheel.spin();
       this.spinwheel.stopRotateWheel();
+      var color = this.spinwheel.colors[this.spinwheel.numbers.indexOf(this.luckynumber)]
+      console.log(color);
+     console.log(this.myNumbers)
+       if(color == this.myNumbers[i][2]){
+         console.log("Has ganado " + this.myNumbers[i][2] * 2 + "$");
+       }
       for (i = 0; i < this.myNumbers.length; i++) {
+        console.log(this.luckynumber)
         if (this.luckynumber == this.myNumbers[i][0]) {
+          console.log(this.myNumbers)
           console.log("Has ganado " + this.myNumbers[i][1] * 36 + "$");
           this.money += this.myNumbers[i][1] * 36;
           
@@ -101,7 +121,7 @@ Game.prototype.saveBet = function() {
   return this.oldNumbers;
 };
 
-Game.prototype.addNumber = function(number) {
+Game.prototype.addNumber = function(number, color) {
   console.log(this.bet);
   var findNumber = false;
   for (i = 0; i < this.myNumbers.length; i++) {
@@ -117,7 +137,8 @@ Game.prototype.addNumber = function(number) {
   if (findNumber == false) {
     this.money -= this.bet;
     this.myBalance();
-    this.myNumbers.push([parseInt(number), parseInt(this.bet)]);
+   var evenOdd = this.checkOddEven(parseInt(number))
+    this.myNumbers.push([parseInt(number), parseInt(this.bet), evenOdd, color]);
   }
   console.log(this.myNumbers);
 };
