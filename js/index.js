@@ -10,8 +10,8 @@ window.onload = function(){
             game.colorBetRedBlack() ;
             game.oddEvenBet();
          //});     
-    function spin(){
-        game.spinwheel.spin()
-    }
+//    function spin(){
+//         game.spinwheel.spin()
+//     }
     game.start();
 }

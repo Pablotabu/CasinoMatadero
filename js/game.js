@@ -10,7 +10,8 @@ function Game(canvasId) {
   this.colorRedBlack = []
   this.oddEven = []
   this.oddEvenTable = []
-  this.luckycolor;
+  
+  
 }
 Game.prototype.repeatBet = function() {
   this.myNumbers = this.oldNumbers.splice(0);
@@ -25,19 +26,27 @@ Game.prototype.repeatBet = function() {
  Game.prototype.colorBetRedBlack = function(){
   $(".color").on("click", function(e){
     this.colorRedBlack = (e.currentTarget.value);
+    this.money -= this.bet;
+       this.myBalance();
     console.log(this.colorRedBlack)
     this.colorBet.push([this.colorRedBlack, parseInt(this.bet)])
    console.log(this.colorBet)
 }.bind(this))}
 
-  Game.prototype.stopBet = function(){
-    console.log($(".mybalance").innerHTML)
+  Game.prototype.clearColorBet = function(){
+   return this.colorBet = [];
+  }
+
+  Game.prototype.clearOddEvenBet = function(){
+    return this.oddEven = []
   }
 
   Game.prototype.oddEvenBet = function(){
      $(".valor").on("click", function(e){
        this.oddEvenTable = (e.currentTarget.value);
        //console.log(this.oddEvenTable)
+       this.money -= this.bet;
+       this.myBalance();
        this.oddEven.push([this.oddEvenTable, parseInt(this.bet)])
        console.log(this.oddEven)
      }.bind(this))}
@@ -50,11 +59,6 @@ Game.prototype.repeatBet = function() {
     }
        };
 
-    
-    
-
-  
- //console.log(oddEvenBet())
 
 Game.prototype.setBet = function() {
   $(".bet").text(this.bet);
@@ -72,8 +76,6 @@ Game.prototype.myBalance = function() {
   $(".mybalance").text(this.money + "$");
   
 };
-
-
 
 Game.prototype.reset = function() {
   this.bet = 1;
@@ -98,6 +100,7 @@ Game.prototype.reset = function() {
              this.myBalance();
              break;
          }
+         
       }  
       for(i=0; i < this.colorBet.length; i++){
        console.log(this.colorBet)
@@ -117,8 +120,10 @@ Game.prototype.reset = function() {
           break;
         }
       }
-      this.saveBet();
       console.log(this.luckynumber);
+      this.clearOddEvenBet();
+      this.clearColorBet();
+      this.saveBet();
     }.bind(this)
   ); // "bind" hace que coja las propiedades anteriores al ultimo scope;
 
@@ -139,7 +144,22 @@ Game.prototype.saveBet = function() {
   this.oldNumbers = this.myNumbers.splice(0);
   return this.oldNumbers;
 };
-
+Game.prototype.addColorBet = function(color){
+  var findColor = false; 
+  for (i = 0; i< this.colorBet.length; i++){
+    if(this.colorBet[i][0] == color) {
+      findColor = true;
+      this.colorBet[i][1] += parseInt(this.bet);
+    }}
+    
+    
+  if(findColor == false) {
+ this.money -= this.bet;
+ this.myBalance();
+this.colorBet[i][1] += parseInt(this.bet);
+break;
+}
+}
 Game.prototype.addNumber = function(number, color) {
   console.log(this.bet);
   var findNumber = false;

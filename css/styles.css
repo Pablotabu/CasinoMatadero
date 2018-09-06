@@ -34,7 +34,7 @@
 }
 
 .even {
-	background: red;
+	background: green;
 	width: 80px;
 	height: 80px;
 	text-align: center;
@@ -43,7 +43,7 @@
 }
 
 .odd {
-	background: black;
+	background:green;
 	width: 80px;
     height: 80px;
 	text-align: center;

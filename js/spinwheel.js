@@ -1,4 +1,10 @@
+var startAngle = 0;
+  var arc = (Math.PI / 37) * 2;
+  var spinTimeout = null;
 
+  var spinArcStart = 10;
+  var spinTime = 0;
+  var spinTimeTotal = 0;
 function SpinWheel(game) {
     this.game = game;
 
@@ -81,13 +87,8 @@ function SpinWheel(game) {
     "26"
   ];
 
-  var startAngle = 0;
-  var arc = (Math.PI / 37) * 2;
-  var spinTimeout = null;
+}
 
-  var spinArcStart = 10;
-  var spinTime = 0;
-  var spinTimeTotal = 0;
 
 SpinWheel.prototype.draw = function() {
     this.drawRouletteWheel();
@@ -167,7 +168,7 @@ SpinWheel.prototype.draw = function() {
       spinAngleStart - this.easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
     startAngle += (spinAngle * Math.PI) / 180;
     this.drawRouletteWheel();
-    spinTimeout = setTimeout(this.rotateWheel(), 3000);
+    spinTimeout = setTimeout(function(){this.rotateWheel()}.bind(this), 30);
   }
 
   SpinWheel.prototype.stopRotateWheel = function () {
@@ -191,6 +192,6 @@ SpinWheel.prototype.draw = function() {
     return b + c * (tc + -3 * ts + 3 * t);
   }//
  
+  
  //console.log(this.game.luckynumber)
   
-}
