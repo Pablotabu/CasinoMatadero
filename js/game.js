@@ -89,13 +89,13 @@ Game.prototype.reset = function() {
       for(i=0; i < this.oddEven.length; i++){
         console.log(this.oddEven[i][0])
          if (this.luckynumber % 2 == 0 && this.oddEven[i][0] == "even"){
-         console.log("Has ganado " + this.oddEven[i][1] * 2 + "$");
+         alert("Has ganado " + this.oddEven[i][1] * 2 + "$");
          this.money += this.oddEven[i][1]*2;
          this.myBalance();
          break;
          }
         if(this.luckynumber % 2 == 1 && this.oddEven[i][0] == "odd") {
-             console.log("Has ganado " + this.oddEven[i][1] == "$");
+             alert("Has ganado " + this.oddEven[i][1] == "$");
              this.money += this.oddEven[i][1] *2;
              this.myBalance();
              break;
@@ -105,7 +105,7 @@ Game.prototype.reset = function() {
       for(i=0; i < this.colorBet.length; i++){
        console.log(this.colorBet)
         if (color == this.colorBet[i][0]){
-        console.log("Has ganado " + this.colorBet[i][1] * 2 + "$");
+        alert("Has ganado " + this.colorBet[i][1] * 2 + "$");
         this.money += this.colorBet[i][1] * 2 ;
         this.myBalance();
         break;
@@ -113,7 +113,7 @@ Game.prototype.reset = function() {
       for (i = 0; i < this.myNumbers.length; i++) {
         if (this.luckynumber == this.myNumbers[i][0]) {
           console.log(this.myNumbers)
-          console.log("Has ganado " + this.myNumbers[i][1] * 36 + "$");
+          alert("Has ganado " + this.myNumbers[i][1] * 36 + "$");
           this.money += this.myNumbers[i][1] * 36;
           
           this.myBalance();
