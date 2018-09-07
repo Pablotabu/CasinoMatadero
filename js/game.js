@@ -61,7 +61,7 @@ Game.prototype.repeatBet = function() {
 
 
 Game.prototype.setBet = function() {
-  $(".bet").text(this.bet);
+  $(".bet").text(this.bet + "$");
 };
 
 Game.prototype.start = function() {
@@ -151,15 +151,12 @@ Game.prototype.addColorBet = function(color){
       findColor = true;
       this.colorBet[i][1] += parseInt(this.bet);
     }}
-    
-    
-  if(findColor == false) {
- this.money -= this.bet;
- this.myBalance();
+    if(findColor == false) {
 this.colorBet[i][1] += parseInt(this.bet);
 break;
 }
 }
+
 Game.prototype.addNumber = function(number, color) {
   console.log(this.bet);
   var findNumber = false;
@@ -181,3 +178,9 @@ Game.prototype.addNumber = function(number, color) {
   }
   console.log(this.myNumbers);
 };
+Game.prototype.moveOn = function(){
+  $("#next").on("click", function(){
+  return $("#principal").toggle()
+    })
+}
+console.log(moveOn())

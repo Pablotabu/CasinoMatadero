@@ -1,7 +1,7 @@
 #ruleta-table{
-    
     display: flex;
-    flex-direction: row;
+	flex-direction: row;
+	
 }
 
 #first-row {
@@ -55,10 +55,7 @@ img {
 	width: 3%;
 	height: 3%;
 }
-input{
-	background-color: brown;
-	
-}
+
 
 .chips {
 	height: 40px;
@@ -101,4 +98,79 @@ background-color: red
 }
 .black{
 background-color: black
+}
+#down {
+	position: absolute;
+}
+#buttons{
+	display: flex;
+	flex-direction: row;
+		
+	
+}
+#buttons div{
+	margin-right:15%;
+}
+
+.ten{
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/ficha1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+.five{
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/ficha3.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+.one{
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/ficha2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.repeatbet{
+	font-size: 18px;
+	background-color: red;
+	height: 60px;
+	width: 180px;
+	border: 1px solid #17212e;
+}
+.canvas{
+	display: flex;
+	display: row;
+	margin-top: -60px;
+	text-align: center;
+	color: red;
+	
+}
+#spin {
+	color: white;
+	font-size:20px;
+	border :3px solid red;
+	border-radius: 20px;
+	margin-top:20%;
+	width: 20%;
+	height: 60px;
+	background-color: black;
+	float:right;
+}
+
+.down{
+	background-image: url("../images/casino2.jpg")
+
+}
+.mybalance, h1{
+	color: red;
+}
+.bet{
+	color: red;
 }

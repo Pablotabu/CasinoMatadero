@@ -1,0 +1,36 @@
+ /* .canvas, #ruleta-table, #first-row, #second-row, #third-row,  .zero, .even, .odd, img, .chips, #colors, .red, .black{
+    
+} */
+#principal{
+    background-image:url("../images/casinos-3.jpg"), url("../images/casinos-3.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 110vh;
+    position: absolute;
+}
+#tittle{
+    position: relative;;
+    font-size: 32px;
+    text-align: center;;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.text{
+    margin-right: 2vw;
+    text-align: right;
+    color:white;
+    font-size:  4vh;
+
+}
+#next{
+    background-color: green;
+    color:white;
+    margin-right: 2vw;
+    float: right;
+    width: 20%;
+    height: 50px;
+    font-size: 18px;
+    border: 1px solid #17212e;
+    border-radius: 10px
+}
+
