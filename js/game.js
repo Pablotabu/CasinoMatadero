@@ -89,13 +89,15 @@ Game.prototype.reset = function() {
       for(i=0; i < this.oddEven.length; i++){
         console.log(this.oddEven[i][0])
          if (this.luckynumber % 2 == 0 && this.oddEven[i][0] == "even"){
-         alert("Has ganado " + this.oddEven[i][1] * 2 + "$");
+           win.play();
+        console.log("Has ganado " + this.oddEven[i][1] * 2 + "$");
          this.money += this.oddEven[i][1]*2;
          this.myBalance();
          break;
          }
-        if(this.luckynumber % 2 == 1 && this.oddEven[i][0] == "odd") {
-             alert("Has ganado " + this.oddEven[i][1] == "$");
+        if(this.luckynumber % 2 != 0 && this.oddEven[i][0] == "odd") {
+             win.play();
+             console.log("Has ganado " + this.oddEven[i][1] == "$");
              this.money += this.oddEven[i][1] *2;
              this.myBalance();
              break;
@@ -105,7 +107,8 @@ Game.prototype.reset = function() {
       for(i=0; i < this.colorBet.length; i++){
        console.log(this.colorBet)
         if (color == this.colorBet[i][0]){
-        alert("Has ganado " + this.colorBet[i][1] * 2 + "$");
+          win.play()
+        console.log("Has ganado " + this.colorBet[i][1] * 2 + "$");
         this.money += this.colorBet[i][1] * 2 ;
         this.myBalance();
         break;
@@ -113,7 +116,8 @@ Game.prototype.reset = function() {
       for (i = 0; i < this.myNumbers.length; i++) {
         if (this.luckynumber == this.myNumbers[i][0]) {
           console.log(this.myNumbers)
-          alert("Has ganado " + this.myNumbers[i][1] * 36 + "$");
+          win.play()
+        console.log("Has ganado " + this.myNumbers[i][1] * 36 + "$");
           this.money += this.myNumbers[i][1] * 36;
           
           this.myBalance();
@@ -138,6 +142,7 @@ Game.prototype.reset = function() {
       this.repeatBet();
     }.bind(this)
   );
+  this.moveOn()
 };
 
 Game.prototype.saveBet = function() {
@@ -180,7 +185,7 @@ Game.prototype.addNumber = function(number, color) {
 };
 Game.prototype.moveOn = function(){
   $("#next").on("click", function(){
-  return $("#principal").toggle()
+    song.play()
+   $("#principal").toggle()
     })
 }
-console.log(moveOn())
