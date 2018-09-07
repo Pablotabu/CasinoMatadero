@@ -165,7 +165,10 @@ background-color: black
 }
 
 body{
-	background-image: url("../images/casino2.jpg")
+	background-image: url("../images/casino2.jpg");
+	
+
+
 
 }
 .mybalance, h1{

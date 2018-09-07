@@ -82,7 +82,10 @@ Game.prototype.reset = function() {
   this.spinwheel = new SpinWheel(this);
   $("#spin").on("click",function() {
       this.spinwheel.spin();
-      this.spinwheel.stopRotateWheel();
+      //this.spinwheel.stopRotateWheel();
+      setTimeout(function(){
+
+      
       var color = this.spinwheel.colors[this.spinwheel.numbers.indexOf(this.luckynumber)]
       console.log(color);
       console.log(this.myNumbers)
@@ -122,12 +125,14 @@ Game.prototype.reset = function() {
           
           this.myBalance();
           break;
+        
         }
       }
       console.log(this.luckynumber);
       this.clearOddEvenBet();
       this.clearColorBet();
       this.saveBet();
+    }.bind(this),3500)
     }.bind(this)
   ); // "bind" hace que coja las propiedades anteriores al ultimo scope;
 

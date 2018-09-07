@@ -154,7 +154,7 @@ SpinWheel.prototype.draw = function() {
   SpinWheel.prototype.spin = function() {
     spinAngleStart = Math.random() * 10 + 10;
     spinTime = 0;
-    spinTimeTotal = Math.random() * 3 + 4 * 1000;//tiempo random animacion
+    spinTimeTotal =  3000;//tiempo random animacion
     this.rotateWheel();
   }
 
